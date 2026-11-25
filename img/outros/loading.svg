@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">Carregando próximo projeto</title>
+  <desc id="descricao">Uma xícara em pixel art solta vapor enquanto os pontos de carregamento piscam.</desc>
+  <style>
+    .brilho { fill: #b99870; opacity: .08; }
+    .vapor { fill: none; stroke: #e6dfd2; stroke-width: 7; stroke-linecap: square; }
+    .rastro { animation: subir 2.1s steps(5, end) infinite; }
+    .rastro--dois { animation-delay: .35s; }
+    .rastro--tres { animation-delay: .7s; }
+    .pontos { animation: piscar .9s steps(1, end) infinite; }
+    @keyframes subir {
+      0% { opacity: .12; transform: translateY(10px); }
+      55% { opacity: .72; }
+      100% { opacity: 0; transform: translateY(-13px); }
+    }
+    @keyframes piscar {
+      0%, 24% { opacity: .25; }
+      25%, 49% { opacity: .5; }
+      50%, 74% { opacity: .75; }
+      75%, 100% { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rastro, .pontos { animation: none; }
+    }
+  </style>
+
+  <ellipse class="brilho" cx="400" cy="210" rx="116" ry="104" />
+
+  <g class="vapor rastro rastro--um">
+    <path d="M371 178v-10h8v-12h8v-11" />
+  </g>
+  <g class="vapor rastro rastro--dois">
+    <path d="M397 171v-12h8v-12h8v-10" />
+  </g>
+  <g class="vapor rastro rastro--tres">
+    <path d="M424 178v-10h-8v-12h-8v-11" />
+  </g>
+
+  <path fill="#e6dfd2" d="M354 184h92v9h-7v8h-7v43h-8v9h-8v8h-38v-8h-8v-9h-8v-43h-8z" />
+  <path fill="#75604b" d="M362 194h76v8h-76z" />
+  <path fill="#2a211b" d="M369 196h62v4h-62z" />
+  <path fill="#b99870" d="M361 202h8v34h8v8h46v-8h8v-34h7v35h-8v9h-8v8h-44v-8h-8v-9h-9z" />
+  <path fill="#e6dfd2" d="M446 205h9v8h7v20h-7v8h-9v-8h8v-20h-8z" />
+  <path fill="#f2ede4" d="M375 208h5v24h-5zM383 240h30v4h-30z" opacity=".65" />
+
+  <text x="400" y="315" text-anchor="middle" fill="#e6dfd2" font-family="ui-monospace, Consolas, monospace" font-size="22" font-weight="700" letter-spacing="4">LOADING<tspan class="pontos" letter-spacing="2">...</tspan></text>
+</svg>
